@@ -452,5 +452,10 @@
     "capture.validating": "Checking the captured file\u2026",
     "capture.detail": "Don't press Download or any ad: the link is captured by itself and the download starts automatically. You have 3 minutes.",
     "capture.link.title": "Download verification",
-    "capture.link.detail": "Pass the check: the link is captured by itself. Cancel any download the browser starts. You have 3 minutes."
+    "capture.link.detail": "Pass the check: the link is captured by itself. Cancel any download the browser starts. You have 3 minutes.",
+    "about.title": "About this build",
+    "about.detail": "This build comes from a fork. Upstream stays the source of truth for how the store works.",
+    "about.build": "Build",
+    "about.version": "App version",
+    "about.upstream": "Upstream"
   }

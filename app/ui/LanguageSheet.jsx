@@ -1,6 +1,8 @@
 // ../pub-game-store/native/ui/LanguageSheet.jsx
 // reconstructed from the esbuild bundle in eboot.bin
 // MODIFIED: the sheet is the app's settings: a download speed limit, navigation vibration, then the languages.
+// MODIFIED (fork): an "About this build" section after the languages, so a build from this fork is
+// told apart from an upstream build: fork name, fork build tag, app version and the upstream URL.
 
 import '../assets/Inter-Regular.ttf';
 import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
@@ -12,6 +14,7 @@ import { SideSheet } from './SideSheet.jsx';
 import { colors } from './colors.js';
 import { setNavigationHaptics, useNavigationHaptics } from './haptics.js';
 import { LIMITS, setSpeedLimit, useSpeedLimit } from '../state/speed-limit.js';
+import { BUILD, FORK, UPSTREAM, VERSION } from '../version.js';
 import { Text, View, useIsFocused } from '@ps5-react/core';
 
   var nameOf = (code) => LOCALES.find((locale2) => locale2.code === code).name;
@@ -62,6 +65,23 @@ import { Text, View, useIsFocused } from '@ps5-react/core';
       text
     ] });
   }
+  // MODIFIED (fork): the build's identity, read-only. A label and a value per row, so nothing here
+  // takes focus and the sheet stays a settings sheet.
+  function AboutRow({ label, value }) {
+    return /* @__PURE__ */ (0, jsxs)(View, { style: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 24, paddingHorizontal: 18, paddingVertical: 9 }, children: [
+      /* @__PURE__ */ (0, jsx)(Text, { style: { fontFamily: "Inter-Regular", fontSize: 21, color: colors.muted }, children: label }),
+      /* @__PURE__ */ (0, jsx)(Text, { style: { fontFamily: "Inter-Regular", fontSize: 21, fontWeight: 600, color: colors.fg, flexShrink: 1, textAlign: "right" }, children: value })
+    ] });
+  }
+  function AboutBuild() {
+    const t2 = useT();
+    return /* @__PURE__ */ (0, jsxs)(View, { style: { gap: 3, paddingBottom: 18 }, children: [
+      /* @__PURE__ */ (0, jsx)(SectionLabel, { icon: "package", title: t2("about.title"), detail: t2("about.detail") }),
+      /* @__PURE__ */ (0, jsx)(AboutRow, { label: t2("about.build"), value: `${FORK} · ${BUILD}` }),
+      /* @__PURE__ */ (0, jsx)(AboutRow, { label: t2("about.version"), value: `v${VERSION}` }),
+      /* @__PURE__ */ (0, jsx)(AboutRow, { label: t2("about.upstream"), value: UPSTREAM })
+    ] });
+  }
   function LanguageSheet({ onClose }) {
     const t2 = useT();
     const choice2 = languageChoice();
@@ -81,7 +101,8 @@ import { Text, View, useIsFocused } from '@ps5-react/core';
       /* @__PURE__ */ (0, jsx)(Row4, { code: "system", name: t2("language.system"), detail: nameOf(systemLocale()), checked: choice2 === null, onPress: () => pick2(null) }),
       LOCALES.map(
         ({ code, name }) => /* @__PURE__ */ (0, jsx)(Row4, { code, name, detail: t2(`language.name.${code}`), checked: choice2 === code, onPress: () => pick2(code) }, code)
-      )
+      ),
+      /* @__PURE__ */ (0, jsx)(AboutBuild, {})
     ] }) });
   }
 

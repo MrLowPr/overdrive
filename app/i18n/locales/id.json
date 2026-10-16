@@ -431,5 +431,10 @@
   "versions.recommended": "Direkomendasikan · berjalan native di PS5",
   "versions.sources": "{count, plural, other {# sumber}}",
   "versions.thisPage": "Halaman ini",
-  "versions.title": "Pilih versi"
+  "versions.title": "Pilih versi",
+  "about.title": "Tentang build ini",
+  "about.detail": "Build ini berasal dari fork. Proyek asli tetap jadi rujukan utama cara kerja toko.",
+  "about.build": "Build",
+  "about.version": "Versi aplikasi",
+  "about.upstream": "Proyek asli"
 }

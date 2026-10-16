@@ -1,3 +1,20 @@
+<div align="center">
+
+<img src="assets/banner.svg" alt="Overdrive — MrLowPr fork" width="100%">
+
+</div>
+
+> [!IMPORTANT]
+> **This repository is a fork of [MyLuxy/overdrive](https://github.com/MyLuxy/overdrive).**
+> Upstream is the original project and stays the source of truth for the app's behaviour;
+> this fork exists to carry its own changes. Everything that is different here is listed in
+> **[FORK-NOTES.md](FORK-NOTES.md)** and in [CHANGELOG.md](CHANGELOG.md).
+> Credits go to [MyLuxy](https://github.com/MyLuxy) and the original contributors.
+>
+> **Install from this fork:** [latest fork release](https://github.com/MrLowPr/overdrive/releases/latest) ·
+> [fork changelog](CHANGELOG.md) · [what changed here](FORK-NOTES.md).
+> Upstream's builds are still the recommended ones unless you want a fork-only change.
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/readme/logo-dark.svg">
